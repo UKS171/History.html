@@ -1,2 +1,62 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="history.css" />
+    <title>Chatbot</title>
+    <style>
+      h2 {
+        color: cornflowerblue;
+        background-color: cornsilk;
+        font-weight: bold;
+        font-style: oblique;
+        text-decoration: overline;
+        text-shadow: 1px 2px 3px crimson;
+      }
+      label {
+        color: darkblue;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      textarea {
+        width: 100%;
+        height: 80px;
+      }
+      .response {
+        white-space: pre-wrap;
+        background-color: #f2f2f2;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 20px;
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <h2 class="heading"><i class="fas fa-comments"></i> Chat with History</h2>
+    <form onsubmit="answerHistory();return false;">
+      <div>
+        <label for="query"><i class="fas fa-history"></i> Query:</label><br />
+        <textarea id="query" placeholder="Ask something..."></textarea>
+      </div>
+      <br />
+      <button type="submit" class="submit">
+        <i class="fas fa-comment-dots"></i> Answer
+      </button>
+    </form>
+    <div class="response" id="responseBox"></div>
+    <script src="./history.js"></script>
+    <div class="chatbot">
+      <img src="./Chatbot icon.png" width="50" height="50" alt="" />
+    </div>
+  </body>
+</html>
